@@ -49,10 +49,10 @@ Run commands from the repository root. The smoke test is a quick check; the full
 ├── experiments
 │   ├── homogeneous.py                  # Homogeneous comparison entry
 │   ├── heterogeneous.py                # Heterogeneous comparison entry
-│   ├── width_study.py               # Student width study under homogeneous settings
-│   ├── run_homogeneous_multiseed.py     # Homogeneous comparison across multiple seeds
-│   ├── run_heterogeneous_multiseed.py   # Heterogeneous comparison across multiple seeds
-│   └── run_width_study_multiseed.py  # Student width study across multiple seeds
+│   ├── width_study.py               	# Student width study under homogeneous settings
+│   ├── run_homogeneous_multiseed.py    # Homogeneous comparison across multiple seeds
+│   ├── run_heterogeneous_multiseed.py  # Heterogeneous comparison across multiple seeds
+│   └── run_width_study_multiseed.py  	# Student width study across multiple seeds
 ├── core
 │   ├── models.py                       # Teacher and student CNNs and operation counts
 │   ├── data_partition.py               # Data partitioning and distribution diagnostics
