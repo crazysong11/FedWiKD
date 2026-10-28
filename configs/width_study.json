@@ -1,0 +1,5 @@
+{
+  "extends": "homogeneous.json",
+  "output_dir": "results/width_study",
+  "experiment_version": "width_study"
+}

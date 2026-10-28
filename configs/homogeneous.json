@@ -1,0 +1,102 @@
+{
+  "data_split_seed": 42,
+  "model_init_seed": 42,
+  "channel_seed_base": 1000,
+  "training_seed": 42,
+  "num_clients": 10,
+  "data_split_mode": "label_sharding_soft_distance_correlated",
+  "total_train_samples": 50000,
+  "label_sharding": {
+    "slices_per_client": 5,
+    "soft_sigma": 0.25,
+    "soft_leakage": 0.15,
+    "soft_temperature": 1.0,
+    "no_duplicate_class_per_client": true,
+    "class_latent_seed": 42,
+    "max_assignment_restarts": 1000,
+    "save_diagnostics": true
+  },
+  "N_T": 128,
+  "stage1_candidate_widths": [
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70
+  ],
+  "max_rounds_safety": 100,
+  "physical": {
+    "K": 10,
+    "M_TOTAL": 100,
+    "W_RB": 180000.0,
+    "N_0": 3.98e-21,
+    "P_MAX": 0.15,
+    "T_FLOP": 2e-12,
+    "E_FLOP": 1e-12,
+    "T_MAX": 35.0,
+    "E_TOTAL_K": 500.0,
+    "DELTA": 0.1,
+    "dist_vec": [
+      100,
+      125,
+      150,
+      175,
+      200,
+      225,
+      250,
+      275,
+      300,
+      350
+    ],
+    "d_ref": 100.0,
+    "omega_ref": 5e-12,
+    "path_loss_exp": 3.5
+  },
+  "dual_solver": {
+    "max_iter": 300,
+    "feas_tol": 0.05
+  },
+  "fedkd": {
+    "local_epochs_student_fedkd": 5,
+    "local_epochs_teacher_fedkd": 5,
+    "temperature_fedkd": 6.0,
+    "teacher_temperature_fedkd": 6.0,
+    "student_temperature_fedkd": 0.4,
+    "alpha_tea_fedkd": 0.8,
+    "alpha_stu_fedkd": 0.2
+  },
+  "fedavg": {
+    "local_epochs_fedavg": 5,
+    "local_lr_fedavg": 0.001,
+    "local_momentum_fedavg": 0.9,
+    "local_weight_decay_fedavg": 0.0005,
+    "model_arch": "teacher",
+    "model_width": 128
+  },
+  "fedprox": {
+    "local_epochs_fedprox": 5,
+    "local_lr_fedprox": 0.001,
+    "local_momentum_fedprox": 0.9,
+    "local_weight_decay_fedprox": 0.0005,
+    "mu_fedprox": 0.01,
+    "model_arch": "teacher",
+    "model_width": 128
+  },
+  "output_dir": "results/homogeneous",
+  "evaluation_batch_size": 50,
+  "scaffold": {
+    "model_arch": "teacher",
+    "model_width": 128,
+    "local_epochs_scaffold": 5,
+    "local_lr_scaffold": 0.001,
+    "local_momentum_scaffold": 0.0,
+    "local_weight_decay_scaffold": 0.0,
+    "batch_size": 50,
+    "server_learning_rate": 1.0,
+    "control_option": "II",
+    "count_control_upload": false
+  },
+  "experiment_version": "homogeneous"
+}
